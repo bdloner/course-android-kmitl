@@ -38,23 +38,20 @@ public class EditActivity extends AppCompatActivity {
     public void alertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this);
-        alertDialogBuilder.setTitle("What you want to edit?");
+        alertDialogBuilder.setTitle("Choose your way...");
         alertDialogBuilder
                 .setMessage("")
                 .setCancelable(false)
                 .setPositiveButton("Edit Color", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
                         colorPicker();
                     }
                 })
                 .setNegativeButton("Edit Size", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        showSeekBar();
-                    }
-                })
-                .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        showSeekBar();
                     }
                 });
         AlertDialog alertDialog = alertDialogBuilder.create();
@@ -75,9 +72,8 @@ public class EditActivity extends AppCompatActivity {
                 Intent returnIntent = new Intent(EditActivity.this, MainActivity.class);
                 returnIntent.putExtra("reDotParcelable", reDotParcelable);
                 setResult(Activity.RESULT_OK, returnIntent);
-                finish();
                 cp.cancel();
-                Toast.makeText(getApplicationContext(), "Changed", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

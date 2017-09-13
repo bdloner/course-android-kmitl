@@ -26,6 +26,7 @@ import kmitl.lab03.bdloner.simplemydot.model.Colors;
 import kmitl.lab03.bdloner.simplemydot.model.Dot;
 import kmitl.lab03.bdloner.simplemydot.model.DotParcelable;
 import kmitl.lab03.bdloner.simplemydot.model.Dots;
+import kmitl.lab03.bdloner.simplemydot.model.Screenshot;
 import kmitl.lab03.bdloner.simplemydot.view.DotView;
 
 public class MainActivity extends AppCompatActivity
@@ -59,9 +60,8 @@ public class MainActivity extends AppCompatActivity
         dotView.invalidate();
     }
 
-    public void onRemoveAll(View view) {
+    public void onClearAll(View view) {
         dots.clearAll();
-        Toast.makeText(getApplicationContext(), "Cleared", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -78,14 +78,13 @@ public class MainActivity extends AppCompatActivity
     public void alertDialog(final int dotPosition) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this);
-        alertDialogBuilder.setTitle("What you want to do?");
+        alertDialogBuilder.setTitle("Edit Color & Size Dot");
         alertDialogBuilder
                 .setMessage("")
                 .setCancelable(true)
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dots.removeBy(dotPosition);
-                        Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("Edit", new DialogInterface.OnClickListener() {
@@ -113,8 +112,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onShare(View view) {
-        Bitmap bitmap = createBitmapFromView(dotView);
-        saveBitmap(bitmap);
+
+        View main;
+        main = findViewById(R.id.main);
+        Bitmap b = Screenshot.takescreenshotOfRottView(main);
+        saveBitmap(b);
         File imagePath = new File(this.getCacheDir(), "images");
         File newFile = new File(imagePath, "image.png");
         Uri contentUri = FileProvider.getUriForFile(this, "kmitl.lab03.bdloner.simplemydot.fileprovider", newFile);
@@ -128,20 +130,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private Bitmap createBitmapFromView(View view) {
-        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas c = new Canvas(bitmap);
-        view.layout(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-        view.draw(c);
-        return bitmap;
-    }
-
     private void saveBitmap(Bitmap bitmap) {
         // save bitmap to cache directory
         try {
             File cachePath = new File(this.getCacheDir(), "images");
-            cachePath.mkdirs(); // don't forget to make the directory
-            FileOutputStream stream = new FileOutputStream(cachePath + "/image.png"); // overwrites this image every time
+            cachePath.mkdirs();
+            FileOutputStream stream = new FileOutputStream(cachePath + "/image.png");
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
             stream.close();
 
