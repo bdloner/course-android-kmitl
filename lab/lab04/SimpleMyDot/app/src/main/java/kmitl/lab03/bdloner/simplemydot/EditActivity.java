@@ -1,1 +1,0 @@
-                reDotParcelable.setRadius(seek.getProgress());
