@@ -1,4 +1,4 @@
-package kmitl.lab03.bdloner.simplemydot.model;
+package kmitl.lab04.bdloner.simplemydot.model;
 
 import java.util.ArrayList;
 import java.util.List;

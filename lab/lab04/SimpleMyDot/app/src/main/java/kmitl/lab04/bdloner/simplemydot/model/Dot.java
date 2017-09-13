@@ -1,4 +1,4 @@
-package kmitl.lab03.bdloner.simplemydot.model;
+package kmitl.lab04.bdloner.simplemydot.model;
 
 /**
  * Created by BDLoneRZ on 8/25/2017.

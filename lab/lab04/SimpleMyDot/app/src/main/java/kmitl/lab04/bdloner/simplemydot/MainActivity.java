@@ -1,4 +1,4 @@
-package kmitl.lab03.bdloner.simplemydot;
+package kmitl.lab04.bdloner.simplemydot;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -16,12 +16,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
 
-import kmitl.lab03.bdloner.simplemydot.model.Colors;
-import kmitl.lab03.bdloner.simplemydot.model.Dot;
-import kmitl.lab03.bdloner.simplemydot.model.DotParcelable;
-import kmitl.lab03.bdloner.simplemydot.model.Dots;
-import kmitl.lab03.bdloner.simplemydot.model.Screenshot;
-import kmitl.lab03.bdloner.simplemydot.view.DotView;
+import kmitl.lab04.bdloner.simplemydot.model.Colors;
+import kmitl.lab04.bdloner.simplemydot.model.Dot;
+import kmitl.lab04.bdloner.simplemydot.model.DotParcelable;
+import kmitl.lab04.bdloner.simplemydot.model.Dots;
+import kmitl.lab04.bdloner.simplemydot.model.Screenshot;
+import kmitl.lab04.bdloner.simplemydot.view.DotView;
 
 public class MainActivity extends AppCompatActivity
         implements Dots.OnDotsChangeListener, DotView.OnDotViewPressListener {
@@ -106,14 +106,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onShare(View view) {
-
         View main;
         main = findViewById(R.id.main);
         Bitmap b = Screenshot.takescreenshotOfRottView(main);
         saveBitmap(b);
         File imagePath = new File(this.getCacheDir(), "images");
         File newFile = new File(imagePath, "image.png");
-        Uri contentUri = FileProvider.getUriForFile(this, "kmitl.lab03.bdloner.simplemydot.fileprovider", newFile);
+        Uri contentUri = FileProvider.getUriForFile(this, "kmitl.lab04.bdloner.simplemydot.fileprovider", newFile);
         if (contentUri != null) {
             Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);

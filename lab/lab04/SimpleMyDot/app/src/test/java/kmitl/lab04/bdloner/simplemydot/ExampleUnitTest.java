@@ -1,4 +1,4 @@
-package kmitl.lab03.bdloner.simplemydot;
+package kmitl.lab04.bdloner.simplemydot;
 
 import org.junit.Test;
 

@@ -1,18 +1,15 @@
-package kmitl.lab03.bdloner.simplemydot.view;
+package kmitl.lab04.bdloner.simplemydot.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.util.List;
-
-import kmitl.lab03.bdloner.simplemydot.model.Dot;
-import kmitl.lab03.bdloner.simplemydot.model.Dots;
+import kmitl.lab04.bdloner.simplemydot.model.Dot;
+import kmitl.lab04.bdloner.simplemydot.model.Dots;
 
 /**
  * Created by BDLoneRZ on 8/25/2017.
