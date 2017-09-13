@@ -2,27 +2,22 @@ package kmitl.lab03.bdloner.simplemydot;
 
 
 import android.app.Activity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.ColorInt;
-
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
 import kmitl.lab03.bdloner.simplemydot.model.DotParcelable;
-
 
 
 public class EditActivity extends AppCompatActivity {
@@ -113,7 +108,6 @@ public class EditActivity extends AppCompatActivity {
         linear.addView(seek);
         alert.setView(linear);
 
-
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 final DotParcelable reDotParcelable = new DotParcelable(dotParcelable.getDotPosition());
@@ -121,7 +115,6 @@ public class EditActivity extends AppCompatActivity {
                 Intent returnIntent = new Intent(EditActivity.this, MainActivity.class);
                 returnIntent.putExtra("reDotParcelable", reDotParcelable);
                 setResult(2, returnIntent);
-                Toast.makeText(getApplicationContext(), "Changed", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

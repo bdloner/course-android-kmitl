@@ -9,17 +9,13 @@ import java.util.List;
 
 public class Dots {
 
-    public interface OnDotsChangeListener {
-        void onDotsChanged(Dots dots);
-    }
+    private List<Dot> allDot = new ArrayList<>();
 
     private OnDotsChangeListener listener;
 
     public void setListener(OnDotsChangeListener listener) {
         this.listener = listener;
     }
-
-    private List<Dot> allDot = new ArrayList<>();
 
     public List<Dot> getAllDot() {
         return allDot;
@@ -50,6 +46,10 @@ public class Dots {
             }
         }
         return -1;
+    }
+
+    public interface OnDotsChangeListener {
+        void onDotsChanged(Dots dots);
     }
 
 

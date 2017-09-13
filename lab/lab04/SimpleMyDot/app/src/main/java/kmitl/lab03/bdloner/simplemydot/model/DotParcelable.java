@@ -9,13 +9,24 @@ import android.os.Parcelable;
 
 
 public class DotParcelable implements Parcelable {
+    public static final Creator<DotParcelable> CREATOR = new Creator<DotParcelable>() {
+        @Override
+        public DotParcelable createFromParcel(Parcel in) {
+            return new DotParcelable(in);
+        }
+
+        @Override
+        public DotParcelable[] newArray(int size) {
+            return new DotParcelable[size];
+        }
+    };
     private int centerX;
     private int centerY;
     private int radius;
     private int dotPosition;
     private int color;
 
-    public DotParcelable(int dotPosition){
+    public DotParcelable(int dotPosition) {
         this.dotPosition = dotPosition;
 
     }
@@ -24,6 +35,7 @@ public class DotParcelable implements Parcelable {
         this.dotPosition = dotPosition;
         this.color = color;
     }
+
 
     public DotParcelable(int dotPosition, int color, int radius) {
         this.dotPosition = dotPosition;
@@ -39,7 +51,6 @@ public class DotParcelable implements Parcelable {
         this.dotPosition = dotPosition;
     }
 
-
     protected DotParcelable(Parcel in) {
         centerX = in.readInt();
         centerY = in.readInt();
@@ -47,18 +58,6 @@ public class DotParcelable implements Parcelable {
         dotPosition = in.readInt();
         color = in.readInt();
     }
-
-    public static final Creator<DotParcelable> CREATOR = new Creator<DotParcelable>() {
-        @Override
-        public DotParcelable createFromParcel(Parcel in) {
-            return new DotParcelable(in);
-        }
-
-        @Override
-        public DotParcelable[] newArray(int size) {
-            return new DotParcelable[size];
-        }
-    };
 
     public int getCenterX() {
         return centerX;
@@ -88,6 +87,10 @@ public class DotParcelable implements Parcelable {
         return dotPosition;
     }
 
+    public void setDotPosition(int dotPosition) {
+        this.dotPosition = dotPosition;
+    }
+
     public int getColor() {
         return color;
     }
@@ -96,21 +99,17 @@ public class DotParcelable implements Parcelable {
         this.color = color;
     }
 
-    public void setDotPosition(int dotPosition) {
-        this.dotPosition = dotPosition;
-    }
-
     @Override
     public int describeContents() {
         return 0;
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(centerX);
-        dest.writeInt(centerY);
-        dest.writeInt(radius);
-        dest.writeInt(dotPosition);
-        dest.writeInt(color);
+    public void writeToParcel(Parcel des, int flags) {
+        des.writeInt(centerX);
+        des.writeInt(centerY);
+        des.writeInt(radius);
+        des.writeInt(dotPosition);
+        des.writeInt(color);
     }
 }

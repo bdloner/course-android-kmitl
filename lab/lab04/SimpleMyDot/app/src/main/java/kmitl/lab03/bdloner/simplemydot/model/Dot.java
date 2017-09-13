@@ -3,6 +3,7 @@ package kmitl.lab03.bdloner.simplemydot.model;
 /**
  * Created by BDLoneRZ on 8/25/2017.
  */
+
 import android.graphics.Color;
 
 
