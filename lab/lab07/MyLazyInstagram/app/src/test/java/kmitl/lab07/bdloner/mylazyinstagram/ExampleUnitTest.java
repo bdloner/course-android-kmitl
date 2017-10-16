@@ -1,4 +1,4 @@
-package kmitl.lab07.surasee2012.mylazyinstagram;
+package kmitl.lab07.bdloner.mylazyinstagram;
 
 import org.junit.Test;
 

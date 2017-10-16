@@ -1,4 +1,4 @@
-package kmitl.lab07.surasee2012.mylazyinstagram;
+package kmitl.lab07.bdloner.mylazyinstagram;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("kmitl.lab07.surasee2012.mylazyinstagram", appContext.getPackageName());
+        assertEquals("kmitl.lab07.nattapon58070036.mylazyinstagram", appContext.getPackageName());
     }
 }
