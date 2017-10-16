@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            app:civ_border_color="#EF6568"
+            app:civ_border_width="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/choose"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="190dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/change" />
+
+            <TextView
+                android:id="@+id/textUser"
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="android" />
+
+            <include layout="@layout/sub_profile_detail" />
+
+            <TextView
+                android:id="@+id/textBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bio : bla bla bla" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/btnGrid"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/gridview"
+            android:onClick="onGrid" />
+
+        <ImageButton
+            android:id="@+id/btnList"
+            style="@android:style/Widget.ImageButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="4dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/listview"
+            android:onClick="onList" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="0.92" />
+</LinearLayout>
