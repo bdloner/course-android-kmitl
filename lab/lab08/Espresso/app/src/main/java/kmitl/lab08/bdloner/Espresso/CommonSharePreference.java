@@ -1,6 +1,5 @@
 package kmitl.lab08.bdloner.Espresso;
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 
