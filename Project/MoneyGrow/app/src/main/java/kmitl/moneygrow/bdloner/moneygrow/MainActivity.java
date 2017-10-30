@@ -1,24 +1,16 @@
 package kmitl.moneygrow.bdloner.moneygrow;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            }
-        }, 7000);
     }
 }
