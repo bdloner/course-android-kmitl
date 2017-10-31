@@ -84,7 +84,8 @@ public class IntroActivity extends Activity {
         layouts = new int[]{
                 R.layout.slide1,
                 R.layout.slide2,
-                R.layout.slide3};
+                R.layout.slide3,
+                R.layout.slide4};
 
         // adding bottom dots
         addBottomDots(0);

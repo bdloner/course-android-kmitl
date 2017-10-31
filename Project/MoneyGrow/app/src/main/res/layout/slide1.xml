@@ -7,24 +7,27 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
         <ImageView
             android:layout_width="@dimen/img_width"
             android:layout_height="@dimen/img_height"
             android:src="@drawable/ic_slide1" />
 
-        <TextView
+        <kmitl.moneygrow.bdloner.moneygrow.CustomTextView
+            android:id="@+id/customTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/title_slide1"
             android:textColor="@android:color/white"
             android:textSize="@dimen/slide_title"
             android:textStyle="bold" />
 
-        <TextView
+        <kmitl.moneygrow.bdloner.moneygrow.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -33,7 +36,8 @@
             android:text="@string/desc_slide1"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_desc" />
+            android:textSize="@dimen/slide_desc"
+            android:breakStrategy="high_quality" />
 
     </LinearLayout>
 

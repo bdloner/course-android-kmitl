@@ -4,10 +4,16 @@
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>
-    <string name="title_slide1">Welcome to MoneyGrow</string>
-    <string name="desc_slide1">You can enter your recurring and daily expenses and incomes and the app keeps track of how much money you have.</string>
-    <string name="title_slide2">Battery status update</string>
-    <string name="desc_slide2">It will keep you updated on battery charging status through notification and home screen widget</string>
-    <string name="title_slide3">Alert on 100%</string>
-    <string name="desc_slide3">It will alert you when battery reaches 100%</string>
+
+    <string name="title_slide1">MoneyGrow</string>
+    <string name="desc_slide1">คุณสามารถบันทึกรายรับรายจ่ายได้อย่าง \nสดวกและรวดเร็ว</string>
+
+    <string name="title_slide2">ตั้งเป้าหมาย</string>
+    <string name="desc_slide2">การที่เราตั้งเป้าหมายในการออม \nมันจะสร้างแรงจูงใจให้คุณประหยัดเงินได้มากขึ้น</string>
+
+    <string name="title_slide3">เติบโตไปด้วยกัน</string>
+    <string name="desc_slide3">ทำให้ต้นไม้เติบโตไปด้วยกันกับคุณสิ \nมันช่วยสร้างแรงบรรดาลใจให้คุณได้นะ</string>
+
+    <string name="title_slide4">เงินออมในปัจจุบัน</string>
+    <string name="desc_slide4">ในตอนนี้คุณมีเงินอยู่เท่าไหร่ \n(คุณสามารถเปลี่ยนแปลงเงินออมในปัจจุบันได้อีกในภายหลัง)</string>
 </resources>

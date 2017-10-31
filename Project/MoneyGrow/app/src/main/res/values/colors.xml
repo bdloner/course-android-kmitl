@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#543e33</color>
+    <color name="colorPrimaryDark">#2f231d</color>
     <color name="colorAccent">#FF4081</color>
 
     <!-- Screens background -->
-    <color name="bg_screen1">#b12515</color>
-    <color name="bg_screen2">#FFBB00</color>
-    <color name="bg_screen3">#74a443</color>
+    <color name="bg_screen1">#543e33</color>
+    <color name="bg_screen2">#543e33</color>
+    <color name="bg_screen3">#543e33</color>
+    <color name="bg_screen4">#543e33</color>
 
     <!-- dots active colors -->
     <color name="dot_active">#000000</color>
