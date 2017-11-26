@@ -1,4 +1,4 @@
-package kmitl.lab09.bdloner.moneyflow.sql;
+package kmitl.lab09.bdloner.moneyflow;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;

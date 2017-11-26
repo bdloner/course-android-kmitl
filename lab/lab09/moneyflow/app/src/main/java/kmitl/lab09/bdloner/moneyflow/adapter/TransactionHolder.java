@@ -1,4 +1,4 @@
-package kmitl.lab09.bdloner.moneyflow.adapter.holder;
+package kmitl.lab09.bdloner.moneyflow.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

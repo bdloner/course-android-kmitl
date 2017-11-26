@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import kmitl.lab09.bdloner.moneyflow.sql.MoneyFlowDB;
 import kmitl.lab09.bdloner.moneyflow.model.Transaction;
 import kmitl.lab09.bdloner.moneyflow.task.AddTransTask;
 import kmitl.lab09.bdloner.moneyflow.task.DeleteTransTask;

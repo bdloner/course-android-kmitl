@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-import kmitl.lab09.bdloner.moneyflow.sql.MoneyFlowDB;
+import kmitl.lab09.bdloner.moneyflow.MoneyFlowDB;
 import kmitl.lab09.bdloner.moneyflow.model.Transaction;
 
 public class FetchTransTask extends AsyncTask<Void, Void, List<Transaction>> {

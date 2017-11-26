@@ -2,7 +2,7 @@ package kmitl.lab09.bdloner.moneyflow.task;
 
 import android.os.AsyncTask;
 
-import kmitl.lab09.bdloner.moneyflow.sql.MoneyFlowDB;
+import kmitl.lab09.bdloner.moneyflow.MoneyFlowDB;
 import kmitl.lab09.bdloner.moneyflow.model.Transaction;
 
 public class AddTransTask extends AsyncTask<Transaction, Void, Void> {

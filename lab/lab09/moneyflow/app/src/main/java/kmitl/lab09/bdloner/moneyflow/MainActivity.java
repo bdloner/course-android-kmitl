@@ -17,7 +17,6 @@ import java.util.List;
 
 import kmitl.lab09.bdloner.moneyflow.adapter.RecyclerItemClickListener;
 import kmitl.lab09.bdloner.moneyflow.adapter.TransactionAdapter;
-import kmitl.lab09.bdloner.moneyflow.sql.MoneyFlowDB;
 import kmitl.lab09.bdloner.moneyflow.model.Summary;
 import kmitl.lab09.bdloner.moneyflow.model.Transaction;
 import kmitl.lab09.bdloner.moneyflow.task.FetchTransTask;
