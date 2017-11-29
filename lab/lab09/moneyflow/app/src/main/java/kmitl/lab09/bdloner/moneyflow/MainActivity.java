@@ -1,11 +1,13 @@
 package kmitl.lab09.bdloner.moneyflow;
 
+import android.app.AlertDialog;
 import android.arch.persistence.room.Room;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -19,6 +21,7 @@ import kmitl.lab09.bdloner.moneyflow.adapter.RecyclerItemClickListener;
 import kmitl.lab09.bdloner.moneyflow.adapter.TransactionAdapter;
 import kmitl.lab09.bdloner.moneyflow.model.Summary;
 import kmitl.lab09.bdloner.moneyflow.model.Transaction;
+import kmitl.lab09.bdloner.moneyflow.task.DeleteTransTask;
 import kmitl.lab09.bdloner.moneyflow.task.FetchTransTask;
 import kmitl.lab09.bdloner.moneyflow.task.SummaryTransTask;
 
@@ -59,12 +62,31 @@ public class MainActivity extends AppCompatActivity {
                 new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        startTransactionActivity(adapter.getTransactionList().get(position));
+
                     }
 
                     @Override
-                    public void onLongItemClick(View view, int position) {
+                    public void onLongItemClick(View view, final int position) {
+                        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                        alertDialog.setTitle("แก้ไขรายการ?");
+                        alertDialog.setMessage("คุณต้องการแก้ไขรายการใช่ไหม?");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "ยกเลิก",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+                                    }
+                                });
 
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "แก้ไข",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        startTransactionActivity(adapter.getTransactionList().get(position));
+                                        dialogInterface.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
                     }
                 }));
 

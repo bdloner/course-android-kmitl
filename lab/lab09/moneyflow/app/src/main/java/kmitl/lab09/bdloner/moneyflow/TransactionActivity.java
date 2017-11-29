@@ -14,7 +14,7 @@ import kmitl.lab09.bdloner.moneyflow.task.AddTransTask;
 import kmitl.lab09.bdloner.moneyflow.task.DeleteTransTask;
 import kmitl.lab09.bdloner.moneyflow.task.UpdateTransTask;
 
-public class TransactionActivity extends AppCompatActivity implements View.OnClickListener {
+public class TransactionActivity extends AppCompatActivity {
 
     private MoneyFlowDB database;
     private Transaction mTransaction;
@@ -41,8 +41,20 @@ public class TransactionActivity extends AppCompatActivity implements View.OnCli
         btnDelete = findViewById(R.id.btnDelete);
 
         radioType.check(R.id.income); // default
-        btnSave.setOnClickListener(this);
-        btnDelete.setOnClickListener(this);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                save();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                delete();
+            }
+        });
 
         mTransaction = getIntent().getParcelableExtra(Transaction.class.getSimpleName());
 
@@ -118,7 +130,7 @@ public class TransactionActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    private void delete() {
+    public void delete() {
         new DeleteTransTask(database, new DeleteTransTask.OnDeleteSuccessListener() {
             @Override
             public void onDeleteSuccess() {
@@ -127,12 +139,4 @@ public class TransactionActivity extends AppCompatActivity implements View.OnCli
         }).execute(mTransaction);
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.btnSave) {
-            save();
-        } else if (view.getId() == R.id.btnDelete) {
-            delete();
-        }
-    }
 }

@@ -34,7 +34,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionHolder> 
     public void onBindViewHolder(TransactionHolder holder, int position) {
         Transaction transaction = transactionList.get(position);
 
-        if (transaction.getType().equals(context.getString(R.string.type_income))) {
+        if (position%2 == 0) {
             holder.rootLayout.setBackgroundResource(R.color.itemDefault);
         } else {
             holder.rootLayout.setBackgroundResource(R.color.itemHighlight);
@@ -42,10 +42,10 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionHolder> 
 
         if (transaction.getType().equals(context.getString(R.string.type_income))) {
             holder.sign.setText("+");
-            holder.sign.setTextColor(Color.parseColor("#000000"));
+            holder.sign.setTextColor(Color.parseColor("#00cc00"));
         } else if (transaction.getType().equals(context.getString(R.string.type_outcome))) {
             holder.sign.setText("-");
-            holder.sign.setTextColor(Color.parseColor("#000000"));
+            holder.sign.setTextColor(Color.parseColor("#e60000"));
         }
 
         holder.textDesribe.setText(transaction.getDescribe());
